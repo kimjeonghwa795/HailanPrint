@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorOrange"
+            android:padding="@dimen/margin_10">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/app_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_toRightOf="@+id/ivLogo"
+                android:text="@string/haipai_print"
+                android:textColor="@color/color_white" />
+
+            <ImageView
+                android:id="@+id/ivCloudImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_15"
+                android:layout_toLeftOf="@+id/ivPersonalCenter"
+                android:onClick="toCloudActivityAction"
+                android:src="@drawable/icon_pr_download" />
+
+            <ImageView
+                android:id="@+id/ivPersonalCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:onClick="toPersonalCenterActivityAction"
+                android:src="@drawable/icon_pr_home" />
+
+        </RelativeLayout>
+
+        <com.hailan.HaiLanPrint.views.SimpleImageBanner
+            android:id="@+id/simpleImageBanner"
+            android:layout_width="fill_parent"
+            app:bb_scale="0.7"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/DividerHorizontalStyle" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View style="@style/DividerHorizontalStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivPager1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_page_highlight" />
+
+            <ImageView
+                android:id="@+id/ivPager2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/main_page_normal" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

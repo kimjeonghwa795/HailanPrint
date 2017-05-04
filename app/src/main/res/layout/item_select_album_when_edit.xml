@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="album"
+            type="com.hailan.HaiLanPrint.models.Album"/>
+
+        <variable
+            name="viewHolder"
+            type="com.hailan.HaiLanPrint.activity.selectimage.SelectAlbumWhenEditActivity.AlbumAdapter.ViewHolder"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:onClick="@{viewHolder::toSelectImageActivityAction}"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_8"
+        android:paddingLeft="@dimen/margin_8"
+        android:paddingRight="@dimen/margin_8"
+        android:paddingTop="@dimen/margin_8">
+
+        <RelativeLayout
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:background="@drawable/bg_photo_selectphotos">
+
+            <ImageView
+                android:id="@+id/first_image"
+                android:layout_width="@dimen/size_74"
+                android:layout_height="@dimen/size_74"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/ic_placeholder"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAlbumName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{album.name}"
+                tools:text="所有图片"/>
+
+            <TextView
+                android:id="@+id/tvImageCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/image_num(album.imageNum)}"
+                tools:text="12 张"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            style="@style/ArrowIconStyle"/>
+    </LinearLayout>
+</layout>

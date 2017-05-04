@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_10">
+
+            <LinearLayout
+                android:id="@+id/lltRequired"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_44"
+                    android:drawableLeft="@drawable/icon_wszl_wd"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:text="*"
+                    android:textColor="@color/colorRed"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_44"
+                    android:gravity="center_vertical"
+                    android:inputType="text"
+                    android:onClick="chooseBirthdayAction"
+                    android:text="@string/require"
+                    android:textSize="@dimen/text_size_16" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_register_name"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rltOptionalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:layout_below="@+id/lltRequired">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:text="@string/optional_information" />
+
+                <ImageView
+                    android:id="@+id/ivCollapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:src="@drawable/icon_more" />
+            </RelativeLayout>
+
+            <View
+                style="@style/DividerHorizontalMarginSytle"
+                android:layout_below="@+id/rltOptionalTitle" />
+
+            <LinearLayout
+                android:id="@+id/lltOptional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/btnLogin"
+                android:layout_below="@+id/rltOptionalTitle"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_wd"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_name"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <TextView
+                    android:id="@+id/tvChildBirthday1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/icon_wszl_cake"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:gravity="center_vertical"
+                    android:hint="@string/choose_child_birthday"
+                    android:inputType="text"
+                    android:onClick="chooseFirstKidBirthdayAction"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildSchool1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_school"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_school"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildClass1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_class"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_class"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_10" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_wd"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_name"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <TextView
+                    android:id="@+id/tvChildBirthday2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/icon_wszl_cake"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:gravity="center_vertical"
+                    android:hint="@string/choose_child_birthday"
+                    android:inputType="text"
+                    android:onClick="chooseSecondKidBirthdayAction"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildSchool2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_school"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_school"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+                <View style="@style/DividerHorizontalMarginSytle" />
+
+                <com.hailan.HaiLanPrint.views.ClearEditText
+                    android:id="@+id/cetChildClass2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_44"
+                    android:background="@color/color_white"
+                    android:drawableLeft="@drawable/icon_wszl_class"
+                    android:drawablePadding="@dimen/margin_12"
+                    android:hint="@string/input_child_class"
+                    android:inputType="text"
+                    android:longClickable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/text_size_16" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_24"
+                android:layout_marginRight="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_36"
+                android:background="@drawable/ripple_button_round_angle_orange"
+                android:gravity="center"
+                android:onClick="finishAction"
+                android:text="@string/finish"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_20" />
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

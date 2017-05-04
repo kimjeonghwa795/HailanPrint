@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/size_90"
+                android:layout_height="@dimen/size_90"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:layout_marginTop="@dimen/margin_36"
+                android:src="@drawable/app_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:text="@string/haipai_print"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_20"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/text_size_14"
+                tools:text="版本号： V2.3.3"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:onClick="toCallPhone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvNume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_44"
+                    android:layout_marginRight="@dimen/size_44"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_16"
+                    android:text="@string/hotline"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hotline_num"
+                    android:textSize="@dimen/text_size_16"/>
+
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:onClick="toUsWeb"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_44"
+                    android:layout_marginRight="@dimen/size_44"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_16"
+                    android:text="@string/official_website"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:id="@+id/tvRealm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/official_website_url"
+                    android:textSize="@dimen/text_size_16"/>
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_44"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:onClick="toRegisterProtocol"
+                    android:paddingLeft="@dimen/margin_16"
+                    android:text="@string/terms_of_service"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:src="@drawable/icon_neet"/>
+
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:onClick="toFeedBack"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_44"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/margin_16"
+                    android:text="@string/feedback"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:src="@drawable/icon_neet"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

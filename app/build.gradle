@@ -1,0 +1,106 @@
+apply plugin: 'com.android.model.application'
+model {
+    android{
+        compileSdkVersion =23
+        buildToolsVersion ="23.0.3"
+        defaultConfig {
+            applicationId ="com.hailan.HaiLanPrint"
+            minSdkVersion.apiLevel = 19
+            targetSdkVersion.apiLevel =  23
+            versionCode =143
+            versionName ="1.43"
+        }
+        signingConfigs
+        {
+            debug {
+                storeFile.add(file('MDGround_Keystore.jks'))
+                storePassword ="13560506833"
+                keyAlias ="yoghourt"
+                keyPassword ="13560506833"
+            }
+            release {
+                storeFile.add(file('MDGround_Keystore.jks'))
+                storePassword ="13560506833"
+                keyAlias ="yoghourt"
+                keyPassword ="13560506833"
+            }
+        }
+        dataBinding
+                {
+            enabled = true
+        }
+
+        repositories {
+            flatDir {
+                dirs ='libs'
+            }
+        }
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled =false
+            proguardFiles.add(file('proguard-android.txt'))
+        }
+    }
+
+    android.ndk {
+        moduleName = "HelloARNative"
+        cppFlags.add("-I${file("../../../package/include")}".toString())
+        cppFlags.add("-DANDROID")
+        cppFlags.add("-fexceptions")
+        cppFlags.add("-frtti")
+        stl = "gnustl_static"
+        ldLibs.add("log")
+        ldLibs.add("GLESv2")
+    }
+    android.productFlavors {
+        create("arm") {
+            ndk.with {
+                abiFilters.add("armeabi-v7a")
+            }
+        }
+    }
+    android.sources
+    {
+        main {
+            jni {
+                dependencies {
+                    library file("../../../package/Android/libs/armeabi-v7a/libEasyAR.so") abi "armeabi-v7a"
+                }
+            }
+        }
+    }
+}
+dependencies {
+    compile project(path: ':WheelviewLibrary')
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
+    compile 'org.greenrobot:greendao:2.2.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    compile 'com.malinskiy:superrecyclerview:1.1.4'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'joda-time:joda-time:2.9.3'
+    compile 'com.github.lzyzsd:circleprogress:1.1.0@aar'
+    compile 'com.flyco.banner:FlycoBanner_Lib:2.0.2@aar'
+    compile 'com.commit451:PhotoView:1.2.5'
+    compile 'com.github.zhaokaiqiang.klog:library:1.1.0'
+    compile fileTree(include: ['*.jar'], dir: '../../../package/Android/libs')
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    compile 'com.github.lovetuzitong:MultiImageSelector:1.2'
+    compile fileTree(include: ['*.jar'], dir: '../../../package/Android/libs')
+}

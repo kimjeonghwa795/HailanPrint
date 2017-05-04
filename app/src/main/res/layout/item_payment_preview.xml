@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="orderWork"
+            type="com.hailan.HaiLanPrint.models.OrderWork"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/viewDidiver1"
+            style="@style/DividerHorizontalStyle"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/bg_pic"/>
+
+            <TextView
+                android:id="@+id/tvProductType"
+                style="@style/NormalTextStyle"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_toRightOf="@+id/ivImage"
+                android:textSize="@dimen/text_size_16"
+                tools:text="照片冲洗"/>
+
+            <TextView
+                android:id="@+id/tvNum"
+                style="@style/DimTextStyle"
+                android:layout_below="@+id/tvProductType"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_toRightOf="@+id/ivImage"
+                tools:text="数量 : 2"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                style="@style/OrangeTextStyle"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_toLeftOf="@+id/tvYuan"
+                android:text="@{@string/yuan_amount(StringUtil.toYuanWithoutUnit(orderWork.price))}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="¥276.00"/>
+
+            <TextView
+                android:id="@+id/tvYuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:text="@string/yuan_unit"
+                android:textSize="@dimen/text_size_16"/>
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalStyle"/>
+
+        <RelativeLayout
+            android:id="@+id/rltQuantity"
+            style="@style/FixHeightLayoutStyle">
+
+            <TextView
+                style="@style/DimTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/quantity"
+                android:textSize="@dimen/text_size_16"/>
+
+            <ImageView
+                android:id="@+id/ivMinus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_toLeftOf="@+id/tvQuantity"
+                android:src="@drawable/icon_reduce_pay"/>
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                style="@style/NormalTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_toLeftOf="@+id/ivAdd"
+                android:gravity="center"
+                android:text="@{String.valueOf(orderWork.orderCount)}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="1"/>
+
+            <ImageView
+                android:id="@+id/ivAdd"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_addition_pay"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/viewDidiver2"
+            style="@style/DividerHorizontalStyle"/>
+
+        <RelativeLayout
+            android:id="@+id/rltSpecification"
+            style="@style/FixHeightLayoutStyle">
+
+            <TextView
+                style="@style/DimTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/choose_specification"/>
+
+            <RadioGroup
+                android:id="@+id/rgSpecification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_8"
+                android:background="@color/color_white"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbBoutique"
+                    style="@style/NormalRaidoButtonStyle"
+                    android:checked="true"
+                    android:text="@string/boutique_art_album"/>
+
+                <RadioButton
+                    android:id="@+id/rbCrystal"
+                    style="@style/NormalRaidoButtonStyle"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:text="@string/crystal_art_album"/>
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

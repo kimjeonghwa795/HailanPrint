@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <import type="com.hailan.HaiLanPrint.utils.DateUtils"/>
+
+        <variable
+            name="coupon"
+            type="com.hailan.HaiLanPrint.models.Coupon"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_4"
+        android:paddingLeft="@dimen/margin_10"
+        android:paddingRight="@dimen/margin_10"
+        android:paddingTop="@dimen/margin_4">
+
+        <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+            android:id="@+id/coupon_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:ratio="0.4"
+            tools:background="@drawable/bg_wdgrzx_has_use">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_30"
+                android:layout_weight="4">
+
+                <TextView
+                    android:id="@+id/tvRmb"
+                    style="@style/OrangeTextStyle"
+                    android:layout_alignBaseline="@+id/tvCouponAmount"
+                    android:text="@string/rmb"
+                    android:textSize="@dimen/text_size_20"/>
+
+                <TextView
+                    android:id="@+id/tvCouponAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_toRightOf="@+id/tvRmb"
+                    android:text="@{StringUtil.toYuanWithInteger(coupon.price)}"
+                    android:textColor="@color/color_f88e11"
+                    android:textSize="@dimen/text_size_30"
+                    tools:text="10"/>
+
+                <TextView
+                    android:id="@+id/tvUseCondition"
+                    style="@style/DimTextStyle"
+                    android:layout_alignLeft="@+id/tvRmb"
+                    android:layout_below="@+id/tvRmb"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@{@string/coupon_use_condition(StringUtil.toYuanWithInteger(coupon.priceLimit))}"
+                    tools:text="满20元使用"/>
+
+            </RelativeLayout>
+
+            <View
+                style="@style/DividerVerticalStyle"
+                android:layout_height="@dimen/margin_96"
+                android:layout_marginRight="@dimen/margin_30"
+                android:background="@color/color_666666"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCouponName"
+                    style="@style/NormalTextStyle"
+                    android:layout_toRightOf="@+id/tvRmb"
+                    android:text="@{coupon.couponName}"
+                    android:textSize="@dimen/text_size_16"
+                    tools:text="10元优惠劵"/>
+
+                <TextView
+                    android:id="@+id/tvNumber"
+                    style="@style/DimTextStyle"
+                    android:layout_alignLeft="@+id/tvRmb"
+                    android:layout_below="@+id/tvRmb"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{@string/coupon_number(coupon.couponNo)}"
+                    tools:text="编号: FHKAJH G23"/>
+
+                <TextView
+                    android:id="@+id/tvExpiryDate"
+                    style="@style/DimTextStyle"
+                    android:layout_alignLeft="@+id/tvRmb"
+                    android:layout_below="@+id/tvRmb"
+                    android:layout_marginTop="@dimen/margin_6"
+                    android:text="@{@string/expiry_date(DateUtils.getYearMonthDayWithDash(coupon.expireTime))}"
+                    tools:text="有效期至: 2016-06-01"/>
+
+            </LinearLayout>
+
+        </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+
+    </RelativeLayout>
+</layout>

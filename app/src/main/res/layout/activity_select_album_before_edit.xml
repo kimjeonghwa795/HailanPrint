@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/albumRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scrollbars="none"/>
+
+        <View style="@style/DividerHorizontalStyle"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white">
+
+            <TextView
+                android:id="@+id/tvPleaseChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:textSize="@dimen/margin_12"
+                tools:text="@string/please_choose_image"/>
+
+            <TextView
+                android:id="@+id/tvChooseTips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:textSize="@dimen/margin_12"
+                android:visibility="invisible"
+                tools:text="@string/choose_image_tips"/>
+
+            <Button
+                android:id="@+id/btnNextStep"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/ripple_button_round_angle_orange"
+                android:gravity="center"
+                android:onClick="nextStepAction"
+                android:text="@string/next_step"
+                android:textColor="@color/color_white"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/selectedImageRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@color/color_white"
+            android:scrollbars="none"/>
+    </LinearLayout>
+</layout>

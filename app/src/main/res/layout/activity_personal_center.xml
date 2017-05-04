@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.hailan.HaiLanPrint.models.User"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivAvatarCircle"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_30"
+            android:src="@drawable/avatar_circle"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civAvatar"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_alignBottom="@+id/ivAvatarCircle"
+            android:layout_alignLeft="@+id/ivAvatarCircle"
+            android:layout_alignRight="@+id/ivAvatarCircle"
+            android:layout_alignTop="@+id/ivAvatarCircle"
+            android:layout_margin="@dimen/margin_6"
+            android:onClick="toPersonalInformationAction"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="0dp"
+            tools:src="@drawable/bg_pic"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/NormalTextStyle"
+            android:layout_below="@+id/ivAvatarCircle"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:textSize="@dimen/text_size_18"
+            tools:text="MISOi"/>
+
+        <LinearLayout
+            android:id="@+id/llt_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginTop="@dimen/size_22"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_place_percenter_mywork"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/text_size_14"
+                    tools:text="广州天河区"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPhoneNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/icon_tel_percenter_mywork"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/text_size_14"
+                    tools:text="立即注册会员"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llt_item"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/llt_contact"
+            android:layout_marginTop="@dimen/margin_10"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_window_bg"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="toMyWorksActivity"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_mywork"/>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/my_works"/>
+
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+
+                <View style="@style/DividerVerticalStyle"/>
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="toMyOrdersActivityAction"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_mywork_news"/>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/my_orders"/>
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontalStyle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_window_bg"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="toMessageCenter"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_mesage_center"/>
+
+                        <TextView
+                            android:id="@+id/message_center_dot"
+                            style="@style/PersonalRedDot"
+                            android:visibility="invisible"
+                            tools:text="10"
+                            tools:visibility="visible"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/message_center"/>
+
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+
+                <View style="@style/DividerVerticalStyle"/>
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="tOMyCreditActivity"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_mywork_integral"/>
+
+                        <TextView
+                            android:id="@+id/credit_dot"
+                            style="@style/PersonalRedDot"
+                            android:visibility="invisible"
+                            tools:text="10"
+                            tools:visibility="visible"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/my_credits"/>
+
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+            </LinearLayout>
+
+            <View style="@style/DividerHorizontalStyle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/color_window_bg"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="toMyCouponActivityAction"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/icon_mywork_coupon"/>
+
+                        <TextView
+                            android:id="@+id/coupon_dot"
+                            style="@style/PersonalRedDot"
+                            android:visibility="invisible"
+                            tools:text="10"
+                            tools:visibility="visible"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/my_coupons"/>
+
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+
+                <View style="@style/DividerVerticalStyle"/>
+
+                <com.hailan.HaiLanPrint.views.FlexibleLinearLayout
+                    android:id="@+id/flltSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="toSettingActivityAction"
+                    android:orientation="vertical"
+                    app:ratio="0.5">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_mywork_percen"/>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:text="@string/setting"/>
+                </com.hailan.HaiLanPrint.views.FlexibleLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>

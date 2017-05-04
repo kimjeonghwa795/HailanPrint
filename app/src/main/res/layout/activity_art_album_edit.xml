@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.hailan.HaiLanPrint.views.FlexibleRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:ratio="0.75">
+
+                <com.hailan.HaiLanPrint.views.BaoGPUImage
+                    android:id="@+id/bgiImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_placeholder" />
+
+                <com.hailan.HaiLanPrint.views.FlexibleImageView
+                    android:id="@+id/ivTemplate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitStart"
+                    app:ratio="0.75" />
+
+            </com.hailan.HaiLanPrint.views.FlexibleRelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_10">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_light_edit" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/layerlist_seekbar_progress"
+                    android:thumb="@drawable/shape_seekbar_thumb" />
+
+                <TextView
+                    android:id="@+id/tvPercent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="0%" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/templateRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerHorizontalStyle"
+            android:layout_above="@+id/btnNextStep"
+            android:layout_marginTop="@dimen/margin_26" />
+
+        <Button
+            android:id="@+id/btnNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="@color/color_white"
+            android:gravity="center"
+            android:onClick="nextStepAction"
+            android:text="@string/next_step"
+            android:textColor="@color/color_f88e11"
+            android:textSize="@dimen/text_size_20" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handlers"
+            type="com.hailan.HaiLanPrint.activity.main.MainActivity.MainBindingEventHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toPhoneShellActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_phone_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/phone_shell"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toPokerActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_p_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/poker"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toPuzzleActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_pic_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/puzzle"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_1"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toMagicCupActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_cup_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/magic_cup"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toLomoCardActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_lomo_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/lomo_card"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_1"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:onClick="@{handlers::toEngravingActivityAction}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_dra_home"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:text="@string/engraving"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

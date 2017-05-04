@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.hailan.HaiLanPrint.activity.calendar.CalendarEditActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/viewDivider">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.hailan.HaiLanPrint.views.FlexibleRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:ratio="0.75">
+
+                    <com.hailan.HaiLanPrint.views.BaoGPUImage
+                        android:id="@+id/bgiImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_placeholder" />
+
+                    <com.hailan.HaiLanPrint.views.FlexibleImageView
+                        android:id="@+id/ivTemplate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitStart"
+                        app:ratio="0.75" />
+
+                    <com.hailan.HaiLanPrint.views.CalendarCard
+                        android:id="@+id/calendarCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_alignParentBottom="true" />
+
+                </com.hailan.HaiLanPrint.views.FlexibleRelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_10">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_light_edit" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/layerlist_seekbar_progress"
+                        android:thumb="@drawable/shape_seekbar_thumb" />
+
+                    <TextView
+                        android:id="@+id/tvPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="0%" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/templateRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+
+                <View
+                    style="@style/DividerHorizontalStyle"
+                    android:layout_above="@+id/btnNextStep"
+                    android:layout_marginTop="@dimen/margin_10" />
+
+                <LinearLayout
+                    style="@style/FixHeightLayoutStyle"
+                    android:onClick="toSelectCalendarAction"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/calendar_start_date"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tvStartDate"
+                        style="@style/DimTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_44"
+                        android:layout_gravity="right"
+                        android:drawablePadding="@dimen/margin_8"
+                        android:drawableRight="@drawable/icon_neet"
+                        android:gravity="center_vertical|right"
+                        android:textSize="@dimen/text_size_16"
+                        tools:text="2016年11月" />
+
+                    <ImageView
+                        style="@style/ArrowIconStyle"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View
+            android:id="@+id/viewDivider"
+            style="@style/DividerHorizontalStyle"
+            android:layout_above="@+id/btnNextStep" />
+
+        <Button
+            android:id="@+id/btnNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:backgroundTint="@color/color_white"
+            android:gravity="center"
+            android:onClick="nextStepAction"
+            android:text="@string/next_step"
+            android:textColor="@color/color_f88e11"
+            android:textSize="@dimen/text_size_20" />
+    </RelativeLayout>
+
+</layout>

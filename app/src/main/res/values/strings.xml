@@ -1,0 +1,406 @@
+<resources>
+    <string name="app_name">海拍海印</string>
+    <string name="haipai_print">海拍海印</string>
+
+    <!-- common -->
+    <string name="finish">完成</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="edit">编辑</string>
+    <string name="preview">预览</string>
+    <string name="delete">删除</string>
+    <string name="delete_num">删除(%d)</string>
+    <string name="loading">加载中</string>
+    <string name="go_on">继续</string>
+    <string name="tips">温馨提示</string>
+    <string name="network_unavailable">网络不可用,确保wifi或者移动网络是否已经打开</string>
+    <string name="request_timeout">请求超时</string>
+    <string name="request_fail">请求失败</string>
+    <string name="not_add_image">第%d页还没有添加照片,是否继续下一步?</string>
+    <string name="illustration">图文说明</string>
+    <string name="cover">封面</string>
+    <string name="error_msg">程序出错了</string>
+    <string name="if_add_to_my_work">是否需要保存作品?</string>
+    <string name="create_all_composite_photo_success">生成所有合成图片成功!</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="type_illustration">规格说明</string>
+
+    <!-- custom view -->
+    <string name="pixel_deficiency">像素不足!</string>
+
+    <!-- 引导页 -->
+    <string name="guide_page">引导页</string>
+    <string name="experience_immediately">立即体验</string>
+
+    <!-- 登录 -->
+    <string name="login">登录</string>
+    <string name="auto_login">自动登录</string>
+    <string name="other_login_way">选择其他登录方式</string>
+    <string name="not_account">还没有账号?</string>
+    <string name="sign_up_immediately">立即注册</string>
+    <string name="input_phone_number">请输入手机号码</string>
+    <string name="input_local_region">请输入所在地区</string>
+    <string name="input_your_phone_number">请输入您的手机号码</string>
+    <string name="input_password">请输入密码</string>
+    <string name="input_invite_code">请输入邀请码(选填)</string>
+
+    <!-- 忘记密码 -->
+    <string name="forget_password">忘记密码</string>
+    <string name="change_password">修改密码</string>
+    <string name="forget_password_question_mark">忘记密码?</string>
+    <string name="change_password_success">修改密码成功</string>
+
+    <!-- 注册 -->
+    <string name="sign_up">注册</string>
+    <string name="input_captcha">请输入验证码</string>
+    <string name="acquire_captcha">获取验证码</string>
+    <string name="next_step">下一步</string>
+    <string name="phone_already_signup">该手机号码已注册</string>
+    <string name="agree_protocol_tips">继续注册表示已同意</string>
+    <string name="hailan_protocol">&lt;&lt;海拍海印注册协议&gt;&gt;</string>
+    <string name="has_account">已有账号,</string>
+    <string name="login_immediately">立即登录</string>
+    <string name="input_corrent_phone">手机号码不存在</string>
+    <string name="input_corrent_password">密码的字符数应该是6-16位</string>
+    <string name="acquire_again">重新获取</string>
+    <string name="after_second_acquire_again">%d秒后重新获取</string>
+    <string name="hailan_sign_up_protocol">海拍海印注册协议</string>
+    <string name="sign_up_success">注册成功</string>
+
+    <!-- 注册协议 -->
+    <string name="sign_up_protocol">注册协议</string>
+    <string name="protocol_tips">请务必认真阅读和理解本&lt;&lt;用户服务协议&gt;&gt; (以下简称&lt;&lt;协议&gt;&gt;)中规定的所有权利和限制。除非您接受本&lt;&lt;协议&gt;&gt;条款,否则您无权注册、登录或使用本协议所涉及的相关服务。您一旦注册、登录、使用或以任何方式使用本&lt;&lt;协议&gt;&gt;所涉及的相关服务的行为将视为对本&lt;&lt;协议&gt;&gt;的接受,即表示您同意并接受本&lt;&lt;协议&gt;&gt;各项条款的约束。</string>
+
+    <!-- 完善资料 -->
+    <string name="improve_information">完善资料</string>
+    <string name="require">(必填)</string>
+    <string name="input_register_name">请输入注册人姓名</string>
+    <string name="input_child_name">请输入孩子姓名</string>
+    <string name="choose_child_birthday">请选择孩子生日</string>
+    <string name="input_child_school">请输入孩子学校</string>
+    <string name="input_child_class">请输入孩子班级</string>
+    <string name="optional_information">选填资料</string>
+
+    <!-- 主界面 -->
+    <string name="main_activity">主界面</string>
+
+    <!-- 云相册 -->
+    <string name="cloud_album">云相册</string>
+    <string name="personal_album">个人相册</string>
+    <string name="share_album">共享相册</string>
+    <string name="image_num">(%d)</string>
+    <string name="choose_photo">选择照片</string>
+    <string name="forward">转存</string>
+    <string name="forward_num">转存(%d)</string>
+    <string name="share_to_wechat">分享到微信</string>
+    <string name="share_to_wechat_moment">分享到朋友圈</string>
+    <string name="share_to_qq">分享到QQ</string>
+    <string name="share_to_weibo">分享到微博</string>
+
+    <!-- 照片上传 -->
+    <string name="select_photos_upload">选择照片上传</string>
+    <string name="all_image">所有图片</string>
+    <string name="select_all">全选</string>
+    <string name="take_picture">拍摄照片</string>
+    <string name="message_max_num">你最多可以选择%d张图片</string>
+    <string name="upload">上传</string>
+    <string name="upload_image">上传图片</string>
+    <string name="upload_image_with_colon">上传图片:</string>
+    <string name="message_center">消息中心</string>
+    <string name="message_detail">消息详情</string>
+    <string name="upload_num">上传(%d)</string>
+    <string name="current_cellular_network">您当前使用的是手机流量，无法上传图片，请在设置中将“仅在WIFI下上传图片”关闭</string>
+    <string name="local_image">选择本地照片</string>
+
+    <!-- 选择照片 -->
+    <string name="please_choose_image">请添加1至%d张图片 (0)</string>
+    <string name="choose_image_tips">
+        <![CDATA[
+        已选<font color=#f88e11>%1$d</font>张照片,最多选择<font color=#f88e11>%2$d</font>张
+        ]]>
+    </string>
+
+    <!-- 个人中心 -->
+    <string name="personal_center">个人中心</string>
+    <string name="my_works">我的作品</string>
+    <string name="my_orders">我的订单</string>
+    <string name="my_credits">我的积分</string>
+    <string name="my_coupons">我的优惠劵</string>
+    <string name="nofind_message">非常抱歉，没有找到相关消息</string>
+    <string name="nofind_works">非常抱歉，没有找到相关作品</string>
+
+    <!-- 个人资料 -->
+    <string name="personal_information">个人资料</string>
+    <string name="avatar">头像</string>
+    <string name="name">姓名</string>
+    <string name="nickname">昵称</string>
+    <string name="locality">所在地</string>
+    <string name="phone">手机号码</string>
+    <string name="registrant_name">注册人姓名</string>
+    <string name="child_information">孩子资料</string>
+    <string name="address_management">地址管理</string>
+    <string name="myaddress">我的地址</string>
+    <string name="account_security">账户安全</string>
+    <string name="can_change_password">可修改密码</string>
+
+    <!-- 我的作品 -->
+    <string name="please_select_same_type">请选择相同类型</string>
+    <string name="please_select_work">请选择作品</string>
+    <string name="production_share">%s作品分享，你也可以来创作自己的作品哦！</string>
+
+    <!-- 我的订单 -->
+    <string name="order_no_with_colon">订单号:</string>
+    <string name="num_with_colon">数量: %d</string>
+    <string name="not_paid">未付款</string>
+    <string name="already_paid">已付款</string>
+    <string name="already_delivered">已发货</string>
+    <string name="already_finished">已完成</string>
+    <string name="refunding">退款中</string>
+    <string name="already_refunded">已退款</string>
+    <string name="refundFail">退款失败</string>
+    <string name="actual_payment_with_colon">实付款:</string>
+    <string name="order_time_with_colon">下单时间:%s</string>
+    <string name="confirm_receive">确认收货</string>
+    <string name="empty_order_tips">非常抱歉,没有找到相关的订单</string>
+
+    <!-- 订单详情 -->
+    <string name="order_detail">订单详情</string>
+    <string name="production_info">商品信息</string>
+    <string name="logistics_information">物流信息</string>
+    <string name="express_company_with_colon">快递公司:</string>
+    <string name="express_number_with_colon">快递单号:</string>
+
+    <!-- 申请退款 -->
+    <string name="apply_refund">申请退款</string>
+    <string name="refund_info">退款信息</string>
+    <string name="refund_reason">退款原因</string>
+    <string name="select_refund_reason">请选择退款原因</string>
+    <string name="refund_amount">退款金额</string>
+    <string name="refund_amount_with_colon">退款金额:</string>
+    <string name="at_most_yuan">最多%s元</string>
+    <string name="refund_detail">退款说明</string>
+    <string name="refund_detail_with_colon">退款说明:</string>
+    <string name="input_refund_amount">请输入退款金额</string>
+    <string name="input_refund_detail">请输入退款详细说明</string>
+    <string name="submit_refund_application">提交退款申请</string>
+
+    <!-- 设置 -->
+    <string name="setting">设置</string>
+    <string name="only_upload_in_wifi">仅在WIFI下上传图片</string>
+    <string name="version">版本号</string>
+    <string name="version_with_colon">版本号:%s</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="confirm_clear_cache">确定清除本地缓存</string>
+    <string name="about_us">关于我们</string>
+    <string name="log_out">退出登录</string>
+    <string name="confirm_log_out">是否确认要退出登录?</string>
+    <string name="check_update">检查更新</string>
+
+    <!-- 冲印照片 -->
+    <string name="print_photo">冲印照片</string>
+    <string name="measurement_description">尺寸说明</string>
+    <string name="choose_paper_num">选择相纸数量</string>
+    <string name="choose_paper">选择相纸</string>
+    <string name="glossy_paper">光面相纸</string>
+    <string name="matte_paper">绒面相纸</string>
+    <string name="choose_print_num">选择冲印数量</string>
+    <string name="glossy_paper_quality">* 特点 : 照片色彩鲜艳,表面光亮,清晰度高,一般适合于产品照或艺术照</string>
+    <string name="matte_paper_quality">* 特点 : 照片色彩柔和,相纸表面显哑光效果,手感好,不容易留下手指印,更易保存</string>
+
+    <!-- 明信片 -->
+    <string name="postcard">卡卡DIY</string>
+    <string name="click_input">点击这里写点什么，限30字</string>
+
+    <!-- 毕业册 -->
+    <string name="magazine_album">杂志册</string>
+
+    <!-- 艺术册 -->
+    <string name="art_album">艺术册</string>
+
+    <!-- 相框 -->
+    <string name="picture_frame">艺术相框</string>
+    <string name="template">模板</string>
+    <string name="landscape">横版</string>
+    <string name="portrait">竖版</string>
+    <string name="purchase">购买</string>
+    <string name="choose_size">选择尺寸</string>
+    <string name="choose_style">选择样式</string>
+    <string name="choose_quantity">选择数量</string>
+
+    <!-- 选择模板 -->
+    <string name="choose_template">选择模板</string>
+    <string name="choose_frame">选择相框</string>
+    <string name="template_detail">模板详情</string>
+    <string name="price_rmb">价格: ¥%s</string>
+    <string name="page_count">%dP</string>
+    <string name="all">全部</string>
+
+    <!-- 模板详情 -->
+    <string name="current_page_index">%1$d/%2$d</string>
+    <string name="create_immediately">马上创作</string>
+    <string name="product_detail">产品详情</string>
+    <string name="template_name">模板: %s</string>
+    <string name="page_num">页数: %dP</string>
+    <string name="recently_edited">最接近编辑： %s</string>
+    <string name="template_name_">模板：</string>
+    <string name="recently_edited_">最接近编辑</string>
+    <string name="page_num_with_colon">页数: </string>
+    <string name="recently_edit">"最近编辑时间: "</string>
+
+    <!-- 个性月历 -->
+    <string name="calendar">个性月历</string>
+    <string name="calendar_start_date">日历开始时间</string>
+
+    <!-- 手机壳 -->
+    <string name="phone_shell">手机壳</string>
+    <string name="phone_brand">手机品牌</string>
+    <string name="select_phone_brand">选择手机品牌</string>
+    <string name="select_phone_model">选择手机型号</string>
+    <string name="please_select_phone_model">请选择手机型号</string>
+    <string name="please_select_phone_material">请选择手机材质壳</string>
+    <string name="phone_material">手机材质壳</string>
+    <string name="silicone">硅胶</string>
+    <string name="plastic">塑料</string>
+    <string name="price">价格</string>
+
+    <!-- 扑克牌 -->
+    <string name="poker">趣味桌游</string>
+
+    <!-- 拼图 -->
+    <string name="puzzle">3D拼图</string>
+    <string name="start_make">开始制作</string>
+
+    <!-- 魔术杯 -->
+    <string name="magic_cup">艺术器皿</string>
+
+    <!-- LOMO卡 -->
+    <string name="lomo_card">服饰帽包</string>
+
+    <!-- 版画 -->
+    <string name="engraving">小资版画</string>
+    <string name="crystal">水晶面</string>
+    <string name="yogon">亚光面</string>
+    <string name="warm_prompt">温馨提示,版画制作周期为5天,请耐心等待</string>
+    <string name="choose_material">选择材质</string>
+    <string name="choose_make_num">选择制作数量</string>
+    <string name="crystal_paper_quality">特点 : 亮光、华丽、大气。照片清晰光滑,与空气彻底隔离,防水防潮可擦洗,不易褪色。</string>
+    <string name="yogon_paper_quality">特点 :
+        表面纹理独特,呈现柔化效果、极具艺术感,光滑面不刺眼且具有立体感,照片与空气彻底隔离,不易褪色,防水防潮防晒,可擦洗,刮划不易留痕迹。
+    </string>
+
+    <!-- 编辑图片 -->
+    <string name="percent">%d</string>
+
+    <!-- 支付 -->
+    <string name="pay">支付</string>
+    <string name="choose_delivery_address_first">请选择收货地址</string>
+    <string name="choose_specification">选择规格</string>
+    <string name="boutique_art_album">精品艺术册</string>
+    <string name="crystal_art_album">水晶艺术册</string>
+    <string name="go_pay">去支付</string>
+    <string name="alipay_pay">支付宝支付</string>
+    <string name="wechat_pay">微信支付</string>
+    <string name="receivables">应付金额: ¥%s</string>
+    <string name="rmb">¥</string>
+    <string name="yuan_amount">¥%s</string>
+    <string name="minus_yuan_amount">-¥%s</string>
+    <string name="yuan_unit">元</string>
+    <string name="coupon">优惠劵</string>
+    <string name="available_num">%d张可用</string>
+    <string name="credit">积分</string>
+    <string name="add_address_first">请先添加地址</string>
+    <string name="choose_address_first">请选择收货地址</string>
+    <string name="amount">总额</string>
+    <string name="freight">运费</string>
+    <string name="offset_fee">已抵用%s元</string>
+    <string name="credit_total">%s积分</string>
+    <string name="quantity">数量</string>
+    <string name="within_12_hours_refund">根据《中华人民共和国消费者权益保护法》,定制产品不可退货，请谨慎下单</string>
+    <string name="template_load_fail">模版图片加载失败</string>
+    <string name="choose_material_first">请选择材质</string>
+
+    <!-- 支付成功 -->
+    <string name="payment_success">支付成功</string>
+    <string name="you_success_pay">你已成功支付</string>
+    <string name="order_number">订单编号: %s</string>
+    <string name="back_to_home">回首页</string>
+    <string name="check_orders">查看订单</string>
+
+    <!-- 选择优惠劵 -->
+    <string name="choose_coupon">选择优惠劵</string>
+    <string name="not_match_coupon_condition">不满足使用金额条件</string>
+    <string name="no_coupon">很抱歉,没有找到您的优惠劵</string>
+
+    <!-- 我的优惠劵 -->
+    <string name="input_activation_code">请输入优惠劵激活码</string>
+    <string name="activate">激活</string>
+    <string name="coupon_use_condition">满%s可使用</string>
+    <string name="coupon_amount">%s元现金优惠劵</string>
+    <string name="coupon_number">编号: %s</string>
+    <string name="expiry_date">有效期至%s</string>
+    <string name="available_coupon">可使用(%d)</string>
+    <string name="unavailable_coupon">不可使用(%d)</string>
+
+    <!-- 收货地址 -->
+    <string name="delivery_address">收货地址</string>
+    <string name="add_address">新增地址</string>
+    <string name="still_can_add_address">还可以增加%d个地址</string>
+
+    <!-- 编辑地址 -->
+    <string name="edit_address">编辑地址</string>
+    <string name="save_and_use">保存并使用</string>
+    <string name="consignee">收货人</string>
+    <string name="input_consignee">请输入收货人姓名</string>
+    <string name="contact_number">联系电话</string>
+    <string name="input_phone">请输入手机号码</string>
+    <string name="region">所在地区</string>
+    <string name="detailed_address">详细地址</string>
+    <string name="input_detailed_address">请输入详细地址</string>
+    <string name="defalut_address">北京北京市东城区</string>
+
+    <!-- 我的积分 -->
+    <string name="holding_credit">持有积分</string>
+    <string name="credits_balance_of_payment">积分收支明细</string>
+    <string name="credits_deduction">积分抵扣</string>
+    <string name="credits_present">积分赠送</string>
+    <string name="total">合计</string>
+
+    <!-- 孩子资料 -->
+    <string name="nickname_tips">昵称最长为8个汉字，或者16个数字，字母</string>
+    <string name="change_nick_name">修改昵称</string>
+    <string name="birthday">出生年月</string>
+    <string name="school">学校</string>
+    <string name="classes">班级</string>
+    <string name="input_school">请输入学校</string>
+    <string name="input_name">请输入姓名</string>
+    <string name="input_nickname">请输入昵称</string>
+    <string name="input_grade">请输入年级</string>
+    <string name="input_birthday">请输入生日</string>
+    <string name="save_address">保存地址</string>
+    <string name="input_you_phone">请输入你的手机号码</string>
+    <string name="nickname_not_null">昵称不能为空</string>
+    <string name="submit_success">提交成功</string>
+    <string name="sumbit_fail">提交失败</string>
+    <string name="update_success">修改成功</string>
+    <string name="add_success">添加成功</string>
+    <string name="save">保存</string>
+    <string name="not_bound">立即注册会员</string>
+    <string name="not_filled">未填写</string>
+    <string name="child_information_one">孩子一资料</string>
+    <string name="child_information_two">孩子二资料</string>
+
+    <!-- 关于我们 -->
+    <string name="hotline">服务热线</string>
+    <string name="official_website">官方网站</string>
+    <string name="hotline_num">400–883–6660</string>
+    <string name="official_website_url">www.haiprint.com</string>
+    <string name="terms_of_service">服务条款</string>
+    <string name="prompt">你的要求是我们努力的方向，期待听到您的声音。</string>
+    <string name="feedback">意见反馈</string>
+    <string name="can_input_charactor">还可以输入%d字</string>
+
+    <!--网页-->
+    <string name="webview">物流信息</string>
+
+</resources>

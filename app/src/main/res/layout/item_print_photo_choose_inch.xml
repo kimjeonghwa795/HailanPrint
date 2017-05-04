@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="handlers"
+            type="com.hailan.HaiLanPrint.activity.photoprint.PrintPhotoChooseInchActivity.PrintPhotoChooseInchAdapter.BindingHolder"/>
+
+        <variable
+            name="measurement"
+            type="com.hailan.HaiLanPrint.models.Measurement"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/NormalLayoutStyle"
+        android:layout_height="60dp"
+        android:background="@drawable/shape_round_corner_area_white_bg"
+        android:onClick="@{handlers::toSelectImageActivityAction}">
+
+        <TextView
+            android:id="@+id/tvInch"
+            style="@style/NormalTextStyle"
+            android:layout_above="@+id/tvImageCount"
+            android:layout_alignLeft="@+id/tvImageCount"
+            android:text="@{measurement.title}"
+            android:textSize="@dimen/text_size_16"
+            tools:text="个人相册"/>
+
+        <TextView
+            android:id="@+id/tvImageCount"
+            style="@style/DimTextStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:text="@{measurement.titleSub}"
+            android:textSize="@dimen/text_size_14"
+            tools:text="(2)"/>
+
+        <TextView
+            android:id="@+id/tvPrice"
+            style="@style/OrangeTextStyle"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/margin_12"
+            android:layout_marginLeft="@dimen/margin_12"
+            android:layout_marginRight="@dimen/margin_12"
+            android:layout_toLeftOf="@+id/ivArrow"
+            android:text='@{StringUtil.toYuanWithoutUnit(measurement.price) + measurement.priceDesc}'
+            android:textSize="@dimen/text_size_12"
+            tools:text="0.5/张"/>
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            style="@style/ArrowIconStyle"/>
+    </RelativeLayout>
+</layout>

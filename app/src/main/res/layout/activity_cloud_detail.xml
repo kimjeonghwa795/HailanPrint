@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorOrange"
+            app:tabIndicatorColor="@color/color_white"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/color_white"
+            app:tabTextColor="@color/color_white"/>
+
+        <com.malinskiy.superrecyclerview.SuperRecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/lltOperation"
+            android:layout_below="@+id/tabLayout"
+            android:scrollbars="none"/>
+
+        <LinearLayout
+            android:id="@+id/lltOperation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbSelectAll"
+                style="@style/ClickableTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_weight="2"
+                android:button="@drawable/selector_cb_bg_auto_login"
+                android:checked="false"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="@string/select_all"
+                android:textSize="@dimen/text_size_16"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/btnOperation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="3"
+                android:background="@drawable/ripple_button_right_angle_orange"
+                android:gravity="center"
+                android:onClick="btnOperationAction"
+                android:text="@string/upload_image"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_20"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

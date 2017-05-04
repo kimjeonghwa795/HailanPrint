@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="template"
+            type="com.hailan.HaiLanPrint.models.Template"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/viewDivider"
+            android:background="@color/color_white"
+            android:orientation="vertical">
+
+            <com.hailan.HaiLanPrint.views.FlexibleRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ratio="0.625">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </com.hailan.HaiLanPrint.views.FlexibleRelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="vertical">
+
+                    <View
+                        style="@style/DividerHorizontalMarginSytle"
+                        android:layout_above="@+id/btnNextStep"/>
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_12"
+                        android:paddingTop="@dimen/margin_12"
+                        android:text="@{@string/template_name(template.templateName)}"
+                        android:textSize="@dimen/text_size_16"
+                        tools:text="模板: 花语"/>
+
+                    <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                        <TextView
+                            android:id="@+id/tvPageNum"
+                            style="@style/DimTextStyle"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            tools:text="页数: 22P"/>
+
+                        <TextView
+                            android:id="@+id/tvPrice"
+                            style="@style/DimTextStyle"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@{@string/price_rmb(StringUtil.toYuanWithoutUnit(template.price))}"
+                            tools:text="价格: ¥16.0"/>
+
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/DividerHorizontalMarginSytle"
+                        android:layout_above="@+id/btnNextStep"/>
+
+
+                    <TextView
+                        style="@style/NormalTextStyle"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="@dimen/margin_12"
+                        android:paddingTop="@dimen/margin_12"
+                        android:text="@string/product_detail"
+                        android:textSize="@dimen/text_size_16"/>
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/margin_4"
+                        android:background="@color/color_white"/>
+
+                    <TextView
+                        android:id="@+id/tvMaterialDescription"
+                        style="@style/DimTextStyle"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:paddingBottom="@dimen/margin_12"
+                        android:paddingLeft="@dimen/margin_12"
+                        android:paddingTop="@dimen/margin_12"
+                        android:text="@{template.materialDesc}"
+                        android:visibility="gone"
+                        tools:text="@string/phone_brand"/>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewDivider"
+            style="@style/DividerHorizontalStyle"
+            android:layout_above="@+id/rltNextStep"/>
+
+        <RelativeLayout
+            android:id="@+id/rltNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white">
+
+            <Button
+                android:id="@+id/btnNextStep"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:layout_gravity="center_horizontal"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:onClick="nextStepAction"
+                android:text="@string/create_immediately"
+                android:textColor="@color/color_f88e11"
+                android:textSize="@dimen/text_size_20"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

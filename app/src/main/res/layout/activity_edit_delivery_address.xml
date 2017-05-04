@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/FixHeightTextStyle"
+                android:layout_width="@dimen/margin_80"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/consignee"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.hailan.HaiLanPrint.views.MultiFiltersEditText
+                android:id="@+id/cetConsignee"
+                style="@style/FixHeightTextStyle"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                app:maxInputNum="20"
+                android:background="@null"
+                android:drawablePadding="@dimen/margin_8"
+                android:hint="@string/input_consignee"
+                android:longClickable="false"
+                android:textSize="@dimen/text_size_16"
+                tools:text="杨镕宾" />
+
+        </LinearLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/FixHeightTextStyle"
+                android:layout_width="@dimen/margin_80"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/contact_number"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.hailan.HaiLanPrint.views.MultiFiltersEditText
+                android:id="@+id/mfetContactNumber"
+                style="@style/FixHeightTextStyle"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawablePadding="@dimen/margin_8"
+                android:hint="@string/input_phone_number"
+                android:inputType="number"
+                android:textSize="@dimen/text_size_16"
+                app:maxInputNum="11"
+                tools:text="15521377721" />
+
+        </LinearLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/FixHeightTextStyle"
+                android:layout_width="@dimen/margin_80"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/region"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvRegion"
+                style="@style/FixHeightTextStyle"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawablePadding="@dimen/margin_8"
+                android:onClick="chooseRegionAction"
+                android:textSize="@dimen/text_size_16"
+                tools:text="广东省广州市" />
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                style="@style/ArrowIconStyle"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/margin_8" />
+
+        </LinearLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvDetailedAdress"
+                style="@style/FixHeightTextStyle"
+                android:layout_width="@dimen/margin_80"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="@string/detailed_address"
+                android:textSize="@dimen/text_size_16" />
+
+            <com.hailan.HaiLanPrint.views.MultiFiltersEditText
+                android:id="@+id/etDetailedAddress"
+                style="@style/FixHeightTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_88"
+                android:layout_toRightOf="@+id/tvDetailedAdress"
+                android:background="@null"
+                android:drawablePadding="@dimen/margin_8"
+                android:gravity="top|left"
+                android:hint="@string/input_detailed_address"
+                android:inputType="textMultiLine"
+                android:longClickable="false"
+                android:paddingTop="@dimen/margin_12"
+                android:scrollbars="vertical"
+                android:textSize="@dimen/text_size_16"
+                tools:text="永泰新和苑" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginRight="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_32"
+            android:background="@drawable/ripple_button_round_angle_orange"
+            android:gravity="center"
+            android:onClick="saveAction"
+            android:text="@string/save_and_use"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_18" />
+
+        <LinearLayout
+            android:id="@+id/lltFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_20" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_120"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="@dimen/size_180" />
+        <TextView
+            android:id="@+id/tv_addAddress"
+            android:background="@drawable/rect_orange"
+            android:layout_centerInParent="true"
+            android:layout_width="@dimen/size_180"
+            android:text="新增地址"
+            android:textColor="@color/color_white"
+            android:gravity="center"
+            android:textSize="@dimen/text_size_18"
+            android:layout_height="@dimen/size_44" />
+    </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

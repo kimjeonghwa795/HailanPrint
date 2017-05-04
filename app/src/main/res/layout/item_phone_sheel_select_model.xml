@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="handlers"
+            type="com.hailan.HaiLanPrint.activity.phoneshell.PhoneShellSelectModelActivity.PhoneShellSelectModelAdapter.BindingHolder"/>
+
+        <variable
+            name="template"
+            type="com.hailan.HaiLanPrint.models.Template"/>
+    </data>
+
+    <RelativeLayout
+        style="@style/FixHeightLayoutStyle"
+        android:onClick="@{handlers::toPhoneShellSelectModelActivityAction}">
+
+        <TextView
+            android:id="@+id/tvInch"
+            style="@style/NormalTextStyle"
+            android:layout_above="@+id/tvImageCount"
+            android:layout_alignLeft="@+id/tvImageCount"
+            android:layout_centerVertical="true"
+            android:text="@{template.templateName}"
+            android:textSize="@dimen/text_size_16"
+            tools:text="个人相册"/>
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/ivArrow"
+            style="@style/ArrowIconStyle"/>
+    </RelativeLayout>
+</layout>

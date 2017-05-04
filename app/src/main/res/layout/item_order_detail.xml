@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="orderWork"
+            type="com.hailan.HaiLanPrint.models.OrderWork"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/bg_pic"/>
+
+            <TextView
+                android:id="@+id/tvProductType"
+                style="@style/NormalTextStyle"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_toRightOf="@+id/ivImage"
+                android:text="@{StringUtil.getProductName(orderWork)}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="照片冲洗"/>
+
+            <TextView
+                android:id="@+id/tvformat"
+                style="@style/DimTextStyle"
+                android:layout_below="@+id/tvProductType"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_toRightOf="@+id/ivImage"
+                tools:text="光面相纸 5寸(8.3cm×12.7cm)"/>
+
+            <TextView
+                android:id="@+id/tvNum"
+                style="@style/DimTextStyle"
+                android:layout_below="@+id/tvformat"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_toRightOf="@+id/ivImage"
+                tools:text="数量 : 2"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                style="@style/OrangeTextStyle"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_toLeftOf="@+id/tvYuan"
+                android:text="@{@string/yuan_amount(StringUtil.toYuanWithoutUnit(orderWork.price))}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="¥276.00"/>
+
+            <TextView
+                android:id="@+id/tvYuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:text="@string/yuan_unit"
+                android:textSize="@dimen/text_size_16"/>
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalStyle"/>
+
+    </LinearLayout>
+
+</layout>

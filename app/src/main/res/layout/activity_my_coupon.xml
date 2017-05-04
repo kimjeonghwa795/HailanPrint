@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/NormalLayoutStyle"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/margin_10"
+            android:paddingTop="@dimen/margin_10"
+            android:visibility="gone">
+
+            <com.hailan.HaiLanPrint.views.ClearEditText
+                android:id="@+id/cetActivationCode"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_round_corner_area_grey_bg"
+                android:drawablePadding="@dimen/margin_8"
+                android:hint="@string/input_activation_code"
+                android:longClickable="false"
+                android:paddingLeft="@dimen/margin_10"
+                android:textColorHint="@color/color_999999"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tvActivate"
+                android:layout_width="@dimen/margin_48"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="activateCouponAction"
+                android:text="@string/activate"
+                android:textColor="@color/color_f88e11"
+                android:textSize="@dimen/text_size_16"/>
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:background="@color/color_white"
+            app:tabIndicatorColor="@color/color_f88e11"
+            app:tabSelectedTextColor="@color/color_f88e11"
+            app:tabTextColor="@color/color_424242"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/bg_personal_center_mc"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

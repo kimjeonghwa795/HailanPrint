@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true"  >
+      <bitmap android:gravity="right|center_vertical" android:src="@drawable/icon_choese_pay" />
+    </item>
+    <item android:state_checked="false">
+      <bitmap android:gravity="right|center_vertical" android:src="@drawable/radionbutton_fake_bg" />
+    </item>
+</selector>

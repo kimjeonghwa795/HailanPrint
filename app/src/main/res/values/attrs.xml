@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FlexibleLayout">
+        <!-- relativelayout的宽高比,如ratio == 3, 则表示 width = 3 * height-->
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="MultiFiltersEditText">
+        <attr name="maxInputNum" format="integer"/>
+    </declare-styleable>
+
+</resources>

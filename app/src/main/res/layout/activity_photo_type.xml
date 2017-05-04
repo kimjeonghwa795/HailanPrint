@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/ivIntroductionPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="Specs"/>
+
+        </ScrollView>
+
+        <View
+            style="@style/DividerHorizontalStyle"
+            android:layout_above="@+id/btnNextStep"/>
+
+        <Button
+            android:id="@+id/btnNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_gravity="center_horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:onClick="nextStepAction"
+            android:text="@string/next_step"
+            android:textColor="@color/color_f88e11"
+            android:textSize="@dimen/text_size_20"/>
+
+    </LinearLayout>
+
+</layout>

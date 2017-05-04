@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_20">
+
+        <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/only_upload_in_wifi"
+                android:textSize="@dimen/text_size_16"/>
+
+            <CheckBox
+                android:id="@+id/cbOnlyWifiUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:button="@drawable/selector_cb_bg_switch_button"/>
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle"/>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="checkUpdate">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/check_update"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tvVersion"
+                style="@style/NormalTextStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_size_16"
+                tools:text="V2.3.3"/>
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle"/>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="clearCacheAction">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/clear_cache"
+                android:textSize="@dimen/text_size_16"/>
+
+            <TextView
+                android:id="@+id/tvCache"
+                style="@style/NormalTextStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/text_size_16"
+                tools:text="233M"/>
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle"/>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="toAboutUsActivityAction">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/about_us"
+                android:textSize="@dimen/text_size_16"/>
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                style="@style/ArrowIconStyle"
+                android:layout_gravity="center_vertical"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_32"
+            android:background="@drawable/ripple_button_right_angle_white"
+            android:gravity="center"
+            android:onClick="logoutAction"
+            android:text="@string/log_out"
+            android:textColor="@color/color_db2e2e"
+            android:textSize="@dimen/text_size_16"/>
+    </LinearLayout>
+</layout>

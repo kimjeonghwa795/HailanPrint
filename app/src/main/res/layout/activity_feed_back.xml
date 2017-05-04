@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View style="@style/DividerHorizontalStyle" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@color/color_white"
+            android:paddingBottom="@dimen/margin_30"
+            android:paddingLeft="@dimen/margin_12"
+            android:paddingRight="@dimen/margin_12"
+            android:paddingTop="@dimen/margin_12">
+
+            <EditText
+                android:id="@+id/etContext"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/size_160"
+                android:background="@drawable/shape_round_corner_area_grey_bg"
+                android:enabled="true"
+                android:gravity="top"
+                android:hint="@string/prompt"
+                android:inputType="textMultiLine"
+                android:minLines="10"
+                android:paddingTop="@dimen/margin_12"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_15"
+                android:paddingBottom="@dimen/margin_16"
+                app:maxInputNum="200"
+                android:scrollbars="vertical"
+                android:textColorHint="#cccccc"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvCanInputCharactor"
+                style="@style/NormalTextStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                tools:text="@string/can_input_charactor" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="@dimen/size_180"
+            android:layout_height="@dimen/size_44"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_40"
+            android:background="@color/colorOrange"
+            android:gravity="center"
+            android:onClick="toSumbit"
+            android:text="提交"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_size_18" />
+
+    </LinearLayout>
+</layout>

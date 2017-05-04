@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="order_status_array">
+        <item>全部</item>
+        <item>已付款</item>
+        <item>已发货</item>
+        <item>已完成</item>
+        <!--<item>退款</item>-->
+    </string-array>
+
+    <string-array name="template_class_array">
+        <item>全部</item>
+        <item>亲子</item>
+        <item>校园</item>
+        <item>旅游</item>
+        <item>写真</item>
+        <item>经典</item>
+        <item>爱情</item>
+    </string-array>
+
+    <string-array name="frame_size_array">
+        <item>6寸</item>
+        <item>8寸</item>
+        <item>10寸</item>
+        <item>12寸</item>
+    </string-array>
+
+</resources>

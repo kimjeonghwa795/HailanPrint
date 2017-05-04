@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="handlers"
+            type="com.hailan.HaiLanPrint.activity.orders.MyOrdersActivity.MyOrdersAdapter.ViewHolder"/>
+
+        <variable
+            name="orderInfo"
+            type="com.hailan.HaiLanPrint.models.OrderInfo"/>
+
+        <variable
+            name="orderWork"
+            type="com.hailan.HaiLanPrint.models.OrderWork"/>
+
+        <variable
+            name="showHeader"
+            type="Boolean"/>
+
+        <variable
+            name="showFooter"
+            type="Boolean"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{handlers::itemClickToOrderDetailAction}"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:layout_marginTop="@dimen/margin_8"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingTop="@dimen/margin_8"
+            android:visibility="@{showHeader ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/tvOrderTitle"
+                style="@style/DimTextStyle"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:text="@string/order_no_with_colon"/>
+
+            <TextView
+                android:id="@+id/tvOrder"
+                style="@style/DimTextStyle"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_toRightOf="@+id/tvOrderTitle"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{orderInfo.orderNo}"
+                tools:text="11089577332"/>
+
+            <TextView
+                android:id="@+id/tvOrderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_8"
+                android:textColor="@color/color_db2e2e"
+                tools:text="已付款"/>
+
+            <View
+                style="@style/DividerHorizontalStyle"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_8">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/bg_pic"/>
+
+            <TextView
+                android:id="@+id/tvProductType"
+                style="@style/NormalTextStyle"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_toRightOf="@+id/ivImage"
+                android:text="@{StringUtil.getProductName(orderWork)}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="照片冲洗"/>
+
+            <TextView
+                android:id="@+id/tvformat"
+                style="@style/DimTextStyle"
+                android:layout_below="@+id/tvProductType"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_toRightOf="@+id/ivImage"
+                tools:text="光面相纸 5寸(8.3cm×12.7cm)"/>
+
+            <TextView
+                android:id="@+id/tvNum"
+                style="@style/DimTextStyle"
+                android:layout_below="@+id/tvformat"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_4"
+                android:layout_toRightOf="@+id/ivImage"
+                tools:text="数量 : 2"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                style="@style/OrangeTextStyle"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_toLeftOf="@+id/tvYuan"
+                android:text="@{@string/yuan_amount(StringUtil.toYuanWithoutUnit(orderWork.price))}"
+                android:textSize="@dimen/text_size_16"
+                tools:text="¥276.00"/>
+
+            <TextView
+                android:id="@+id/tvYuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/ivImage"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_15"
+                android:text="@string/yuan_unit"
+                android:textSize="@dimen/text_size_16"/>
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalStyle"/>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin_8"
+            android:paddingTop="@dimen/margin_8"
+            android:visibility="@{showFooter ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/tvActualPaymentTitle"
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/actual_payment_with_colon"/>
+
+            <TextView
+                android:id="@+id/tvActualPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_toRightOf="@+id/tvActualPaymentTitle"
+                android:gravity="center"
+                android:text="@{@string/yuan_amount(StringUtil.toYuanWithoutUnit(orderInfo.totalFeeReal))}"
+                android:textColor="@color/color_f88e11"
+                tools:text="¥552.00"/>
+
+            <Button
+                android:id="@+id/btnOperation"
+                style="@style/NormalRaidoButtonStyle"
+                android:layout_alignParentRight="true"
+                android:onClick="@{handlers::btnOperationAction}"
+                android:paddingBottom="0dp"
+                android:paddingTop="0dp"
+                tools:text="@string/confirm_receive"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

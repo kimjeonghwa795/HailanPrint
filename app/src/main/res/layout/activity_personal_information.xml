@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_10"
+            style="@style/NormalLayoutStyle"
+            android:onClick="selectSingleImageAction"
+            android:layout_height="@dimen/size_88">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/avatar"
+                android:textSize="@dimen/text_size_16" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civAvatar"
+                android:layout_width="@dimen/size_60"
+                android:layout_height="@dimen/size_60"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/margin_6"
+                android:layout_toLeftOf="@+id/ivArrow"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="0dp"
+                tools:src="@drawable/bg_pic" />
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                style="@style/ArrowIconStyle" />
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="toChangeNameAction">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/nickname"
+
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvNickname"
+                style="@style/WithArrowIconDimTextStyle"
+                tools:text="包" />
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="selectAddress"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/locality"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvLocality"
+                style="@style/WithArrowIconDimTextStyle"
+                tools:text="广州天河区" />
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/phone"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                style="@style/DimTextStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                tools:text="15521377721" />
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/registrant_name"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                android:id="@+id/tvAccountName"
+                style="@style/DimTextStyle"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                tools:text="yoghourt" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:layout_marginTop="@dimen/margin_10"
+            android:onClick="setChildData"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/child_information"
+                android:textSize="@dimen/text_size_16" />
+
+            <ImageView style="@style/ArrowIconStyle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:layout_marginTop="@dimen/margin_10"
+            android:onClick="toManageAddressActivity"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/address_management"
+                android:textSize="@dimen/text_size_16" />
+
+            <ImageView style="@style/ArrowIconStyle" />
+
+        </RelativeLayout>
+
+        <View style="@style/DividerHorizontalMarginSytle" />
+
+        <RelativeLayout
+            style="@style/FixHeightLayoutStyle"
+            android:onClick="toSetPassword"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/NormalTextStyle"
+                android:layout_centerVertical="true"
+                android:text="@string/account_security"
+                android:textSize="@dimen/text_size_16" />
+
+            <TextView
+                style="@style/WithArrowIconDimTextStyle"
+                android:text="@string/can_change_password" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="orderInfo"
+            type="com.hailan.HaiLanPrint.models.OrderInfo"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    style="@style/NormalLayoutStyle"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_15"
+                    android:paddingTop="@dimen/margin_15">
+
+                    <ImageView
+                        android:id="@+id/ivLocationLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_place_pay"/>
+
+                    <TextView
+                        android:id="@+id/tvReceiver"
+                        style="@style/NormalTextStyle"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_toRightOf="@+id/ivLocationLogo"
+                        tools:text="陈奕迅"/>
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        style="@style/DimTextStyle"
+                        android:layout_marginLeft="@dimen/margin_15"
+                        android:layout_toRightOf="@+id/tvReceiver"
+                        tools:text="15521377721"/>
+
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        style="@style/DimTextStyle"
+                        android:layout_alignLeft="@+id/tvReceiver"
+                        android:layout_below="@+id/tvReceiver"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:layout_toRightOf="@+id/ivLocationLogo"
+                        tools:text="广东省广州市天河区棠安路188号乐"/>
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bitmap_address"/>
+
+                <RelativeLayout
+                    style="@style/FixHeightLayoutStyle"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/margin_8"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingTop="@dimen/margin_8">
+
+                    <TextView
+                        android:id="@+id/tvOrderTitle"
+                        style="@style/NormalTextStyle"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:text="@string/order_no_with_colon"/>
+
+                    <TextView
+                        android:id="@+id/tvOrder"
+                        style="@style/NormalTextStyle"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_toRightOf="@+id/tvOrderTitle"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        tools:text="11089577332"/>
+
+                    <TextView
+                        android:id="@+id/tvOrderStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginRight="@dimen/margin_8"
+                        android:textColor="@color/color_db2e2e"
+                        tools:text="已付款"/>
+
+                    <View
+                        style="@style/DividerHorizontalStyle"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/productRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_white"/>
+
+                <LinearLayout
+                    android:id="@+id/lltAmountDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        style="@style/NormalLayoutStyle"
+                        android:gravity="center_vertical"
+                        android:paddingTop="@dimen/margin_6">
+
+                        <TextView
+                            style="@style/DimTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/amount"/>
+
+                        <TextView
+                            android:id="@+id/tvAmount"
+                            style="@style/OrangeTextStyle"
+                            android:layout_toLeftOf="@+id/tvYuan"
+                            tools:text="¥276.00"/>
+
+                        <TextView
+                            android:id="@+id/tvYuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/yuan_unit"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/NormalLayoutStyle"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            style="@style/DimTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/coupon"/>
+
+                        <TextView
+                            android:id="@+id/tvCouponFee"
+                            style="@style/OrangeTextStyle"
+                            android:layout_toLeftOf="@+id/tvYuan2"
+                            android:text="¥0.00"/>
+
+                        <TextView
+                            android:id="@+id/tvYuan2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/yuan_unit"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/NormalLayoutStyle"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            style="@style/DimTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="积分抵扣"/>
+
+                        <TextView
+                            android:id="@+id/tvIntegralFee"
+                            style="@style/OrangeTextStyle"
+                            android:layout_toLeftOf="@+id/tvYuan3"
+                            android:text="¥0.00"/>
+
+                        <TextView
+                            android:id="@+id/tvYuan3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/yuan_unit"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        style="@style/NormalLayoutStyle"
+                        android:gravity="center_vertical"
+                        android:paddingBottom="@dimen/margin_6">
+
+                        <TextView
+                            style="@style/DimTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/freight"/>
+
+                        <TextView
+                            android:id="@+id/tvFreightFee"
+                            style="@style/OrangeTextStyle"
+                            android:layout_toLeftOf="@+id/tvYuan4"
+                            android:text="¥0.00"/>
+
+                        <TextView
+                            android:id="@+id/tvYuan4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@string/yuan_unit"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View style="@style/DividerHorizontalStyle"/>
+
+                <LinearLayout
+                    style="@style/NormalLayoutStyle"
+                    android:gravity="right"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/margin_8"
+                    android:paddingTop="@dimen/margin_8">
+
+                    <TextView
+                        android:id="@+id/tvRealFee"
+                        style="@style/OrangeTextStyle"
+                        android:layout_centerVertical="true"
+                        android:textSize="@dimen/text_size_18"
+                        tools:text="@string/actual_payment_with_colon"/>
+
+                    <TextView
+                        android:id="@+id/tvOrderTime"
+                        style="@style/DimTextStyle"
+                        android:textSize="@dimen/text_size_14"
+                        tools:text="@string/order_time_with_colon"/>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/lltMoreDetail"
+                    style="@style/NormalLayoutStyle"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:onClick="onExpressDetailClick"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_12">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvOrderStatusLogo"
+                            style="@style/NormalTextStyle"
+                            android:drawableLeft="@drawable/icon_logistics_pay"
+                            android:drawablePadding="@dimen/margin_8"
+                            android:text="@string/logistics_information"
+                            android:textSize="@dimen/text_size_16"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_6"
+                            android:background="@color/color_white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvDetail1Title"
+                                style="@style/DimTextStyle"
+                                android:layout_marginTop="@dimen/margin_6"
+                                tools:text="@string/express_company_with_colon"/>
+
+                            <TextView
+                                android:id="@+id/tvDetail1"
+                                style="@style/OrangeTextStyle"
+                                android:layout_marginTop="@dimen/margin_6"
+                                tools:text="@string/express_company_with_colon"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_6"
+                            android:background="@color/color_white"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvDetail2Title"
+                                style="@style/DimTextStyle"
+                                android:layout_marginTop="@dimen/margin_6"
+                                tools:text="@string/express_company_with_colon"/>
+
+                            <TextView
+                                android:id="@+id/tvDetail2"
+                                style="@style/OrangeTextStyle"
+                                android:layout_marginTop="@dimen/margin_6"
+                                tools:text="@string/express_company_with_colon"/>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rltUploadImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:background="@color/color_white"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/margin_15">
+
+                            <TextView
+                                android:id="@+id/tvUploadImage"
+                                style="@style/DimTextStyle"
+                                android:clickable="true"
+                                android:gravity="center_vertical"
+                                android:text="@string/upload_image_with_colon"/>
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/uploadImageRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/size_88"
+                                android:layout_marginRight="@dimen/margin_8"
+                                android:layout_toRightOf="@+id/tvUploadImage"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|right"
+                        android:src="@drawable/icon_more"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View style="@style/DividerHorizontalStyle"/>
+
+        <LinearLayout
+            android:id="@+id/lltOperation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_44"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/btnApplyRefund"
+                style="@style/ClickableTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_weight="2"
+                android:background="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:onClick="btnOperationAction"
+                android:paddingLeft="@dimen/margin_10"
+                android:text="@string/apply_refund"
+                android:textColor="@color/color_f88e11"
+                android:textSize="@dimen/text_size_18"/>
+
+            <Button
+                android:id="@+id/btnOperation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_button_right_angle_orange"
+                android:gravity="center"
+                android:onClick="btnOperationAction"
+                android:text="@string/go_pay"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/text_size_18"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

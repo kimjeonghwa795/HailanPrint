@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rltShareToWechat"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_20">
+
+                <ImageView
+                    android:id="@+id/ivWechat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icon_share_wx_pay"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_below="@id/ivWechat"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="@string/share_to_wechat"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rltShareToWechatMoment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_20">
+
+                <ImageView
+                    android:id="@+id/ivWechatMoment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icon_share_wx_mm_pay"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_below="@id/ivWechatMoment"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="@string/share_to_wechat_moment"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rltShareToQQ"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_20">
+
+                <ImageView
+                    android:id="@+id/ivQQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icon_share_qq_pay"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_below="@id/ivQQ"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="@string/share_to_qq"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rltShareToWeibo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_10"
+                android:paddingTop="@dimen/margin_20">
+
+                <ImageView
+                    android:id="@+id/ivWeibo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/icon_share_sina_pay"/>
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_below="@id/ivWeibo"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="@string/share_to_weibo"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerHorizontalStyle"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            style="@style/FixHeightLayoutStyle"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/cancel"
+            android:textSize="@dimen/text_size_16"/>
+
+    </LinearLayout>
+</layout>

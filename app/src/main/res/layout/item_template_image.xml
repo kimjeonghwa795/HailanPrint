@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewHolder"
+            type="com.hailan.HaiLanPrint.adapter.TemplateImageAdapter.ViewHolder"/>
+
+        <variable
+            name="image"
+            type="com.hailan.HaiLanPrint.models.MDImage"/>
+
+        <variable
+            name="isSelected"
+            type="boolean"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:onClick="@{viewHolder::selectImageAction}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/triangle"
+            android:visibility="@{isSelected ? View.VISIBLE : View.INVISIBLE}"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:background='@{isSelected ? @drawable/shape_template_bg : @drawable/shape_transparent}'
+            tools:background="@drawable/shape_template_bg">
+
+            <FrameLayout
+                android:id="@+id/fltEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hailan.HaiLanPrint.views.ProductionView
+                    android:id="@+id/production_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvIndex"
+            style="@style/NormalTextStyle"
+            android:layout_marginTop="@dimen/margin_4"
+            tools:text="1"/>
+
+    </LinearLayout>
+</layout>

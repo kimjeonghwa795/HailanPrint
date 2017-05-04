@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        style="@style/FixHeightLayoutStyle"
+        android:layout_height="@dimen/size_122">
+
+        <View
+            android:id="@+id/verticalDivider"
+            style="@style/DividerVerticalStyle"
+            android:layout_width="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="6dp"
+            android:background="#A2A09B" />
+
+        <View
+            android:id="@+id/viewCircle"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="@dimen/margin_20"
+            android:background="@drawable/shape_seekbar_thumb" />
+
+        <LinearLayout
+            android:id="@+id/lltContent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_122"
+            android:layout_marginLeft="@dimen/margin_12"
+            android:layout_toLeftOf="@+id/ivArrow"
+            android:layout_toRightOf="@+id/viewCircle"
+            android:layout_weight="1"
+            android:background="@color/color_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCreateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_16"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/text_size_16"
+                tools:text="2382323293298" />
+
+            <TextView
+                android:id="@+id/tvMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/margin_8"
+                android:textColor="@color/color_424242"
+                android:textSize="@dimen/text_size_14"
+                tools:text="这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容这里是消息内容" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            style="@style/ArrowIconStyle" />
+
+        <View
+            style="@style/DividerHorizontalStyle"
+            android:layout_alignLeft="@+id/lltContent"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</layout>

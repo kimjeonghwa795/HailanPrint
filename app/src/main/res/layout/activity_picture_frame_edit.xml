@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.hailan.HaiLanPrint.utils.StringUtil"/>
+
+        <variable
+            name="template"
+            type="com.hailan.HaiLanPrint.models.Template"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lltEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                <TextView
+                    android:id="@+id/tvTemplateName"
+                    style="@style/NormalTextStyle"
+                    android:layout_centerVertical="true"
+                    android:text="@{template.templateName}"
+                    android:textSize="@dimen/text_size_16"
+                    tools:text="实木大画框"/>
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    style="@style/OrangeTextStyle"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/text_size_16"
+                    tools:text="¥233.00元"/>
+
+            </RelativeLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_centerVertical="true"
+                    android:text="@string/choose_size"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <HorizontalScrollView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_marginRight="@dimen/_margin_8"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:fillViewport="true">
+
+                    <RadioGroup
+                        android:id="@+id/rgSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_white"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rb6Inch"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:checked="true"-->
+                        <!--android:text="@{(@stringArray/frame_size_array)[0]}"/>-->
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rb8Inch"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:layout_marginLeft="@dimen/margin_15"-->
+                        <!--android:text="@{(@stringArray/frame_size_array)[1]}"/>-->
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rb10Inch"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:layout_marginLeft="@dimen/margin_15"-->
+                        <!--android:text="@{(@stringArray/frame_size_array)[2]}"/>-->
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rb12Inch"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:layout_marginLeft="@dimen/margin_15"-->
+                        <!--android:text="@{(@stringArray/frame_size_array)[3]}"/>-->
+
+                    </RadioGroup>
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_centerVertical="true"
+                    android:text="@string/choose_style"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <RadioGroup
+                    android:id="@+id/rgStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/color_white"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbLandscape"
+                        style="@style/NormalRaidoButtonStyle"
+                        android:checked="true"
+                        android:enabled="false"
+                        android:text="@string/landscape"/>
+
+                    <RadioButton
+                        android:id="@+id/rbPortrait"
+                        style="@style/NormalRaidoButtonStyle"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:enabled="false"
+                        android:text="@string/portrait"/>
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_centerVertical="true"
+                    android:text="@string/choose_material"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <HorizontalScrollView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_marginRight="@dimen/_margin_8"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:fillViewport="true">
+
+                    <RadioGroup
+                        android:id="@+id/rgMaterial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color_white"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rbSilicone"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:enabled="false"-->
+                        <!--android:text="@string/silicone" />-->
+
+                        <!--<RadioButton-->
+                        <!--android:id="@+id/rbPlastic"-->
+                        <!--style="@style/NormalRaidoButtonStyle"-->
+                        <!--android:layout_marginLeft="@dimen/margin_15"-->
+                        <!--android:enabled="false"-->
+                        <!--android:text="@string/plastic" />-->
+
+                    </RadioGroup>
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <View style="@style/DividerHorizontalMarginSytle"/>
+
+            <RelativeLayout style="@style/FixHeightLayoutStyle">
+
+                <TextView
+                    style="@style/NormalTextStyle"
+                    android:layout_centerVertical="true"
+                    android:text="@string/choose_quantity"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <ImageView
+                    android:id="@+id/ivMinus"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:layout_toLeftOf="@+id/tvNum"
+                    android:onClick="minusNumAction"
+                    android:src="@drawable/icon_reduce_pay"/>
+
+                <TextView
+                    android:id="@+id/tvNum"
+                    style="@style/NormalTextStyle"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:layout_toLeftOf="@+id/ivAdd"
+                    android:text="@{String.valueOf(template.pageCount)}"
+                    android:textSize="@dimen/text_size_16"
+                    tools:text="1"/>
+
+                <ImageView
+                    android:id="@+id/ivAdd"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="addNumAction"
+                    android:src="@drawable/icon_addition_pay"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/DividerHorizontalStyle"
+            android:layout_above="@+id/rltPurchase"
+            android:layout_marginTop="@dimen/margin_26"/>
+
+        <RelativeLayout
+            android:id="@+id/rltPurchase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_white">
+
+            <Button
+                android:id="@+id/btnPurchase"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_44"
+                android:layout_gravity="center_horizontal"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:onClick="purchaseAction"
+                android:text="@string/purchase"
+                android:textColor="@color/color_f88e11"
+                android:textSize="@dimen/text_size_20"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
